@@ -1,0 +1,57 @@
+@import './libs/fonts';
+@import './blocks/header';
+@import './var/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat';
+}
+
+ul {
+    list-style-type:none;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+.btn-main {
+    
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+// .video {
+//     position: relative;
+//     width: 100%;
+//     video {
+//         width: 100%;
+//     }
+//     .test {
+//         position: absolute;
+//         top: 20px;
+//         left: 50%;
+//     }
+// }
+// .block {
+//     position: relative;
+//     width: 100%;
+//     height: 500px;
+//     background-color: green;
+//     .top {
+//         border: 250px solid white;
+//         border-left: 180px solid green; 
+//         position: absolute;
+//         top: 0;
+//         right: -250px;
+//     }
+// }

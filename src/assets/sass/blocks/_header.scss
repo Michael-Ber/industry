@@ -1,0 +1,130 @@
+@import '../var/variables';
+@import '../var/mixins';
+.header {
+    padding: 10px 10px 25px 10px;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @media(max-width: $breakpoint-575) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .link-phone, .link-mail {
+            transition: .3s all ease;
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+    &__logo {
+        width: 300px;
+        height: 83px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        @media(max-width: $breakpoint-991) {
+            width: 250px;
+        }
+        @media(max-width: $breakpoint-767) {
+            width: 200px;
+        }
+    }
+    &__phone, &__mail {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @media(max-width: $breakpoint-575) {
+            display: none;
+        }
+    }
+    &__subwrapper {
+        margin-top: 25px;
+        @media(max-width: $breakpoint-575) {
+            margin-top: 0;
+        }
+    }
+    &__nav {
+        @media(max-width: $breakpoint-991) {
+            display: none;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .1s all ease;
+        &_active {
+            @include cut_block_angle;
+            position: relative;
+            padding: 8px 30px;
+            background-color: $main-color;
+            .header__navlink {
+                position: relative;
+                color: $white;
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: -12px;
+                    transform: translateY(-50%);
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 100%;
+                    background-color: $white;
+                }
+            }
+        }
+        &:hover {
+            .header__navlink {
+                color: $main-color;
+            }
+        }
+    }
+    &__navlink {
+        font-size: 13px;
+    }
+    &__burger {
+        margin: 0 auto;
+        .burger-header {
+            &__btn {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                @media(max-width: $breakpoint-991) {
+                    display: flex;
+                }
+                span {
+                    width: 25px;
+                    height: 2px;
+                    background-color: $black;
+                }
+            }
+            &__nav {
+                display: none;
+            }
+            &__phone, &__mail {
+                display: none;
+                @media(max-width: $breakpoint-575) {
+                    display: flex;
+                    gap: 8px;
+                }
+            }
+        }
+    }
+}

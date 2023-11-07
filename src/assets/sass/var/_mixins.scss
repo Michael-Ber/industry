@@ -1,0 +1,18 @@
+@mixin cut_block_angle {
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-top: 15px solid $white; 
+        border-right: 15px solid $main-color; 
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-bottom: 15px solid $white; 
+        border-left: 15px solid $main-color; 
+    }
+}
