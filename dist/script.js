@@ -90,10 +90,43 @@
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
   \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _setMarkPositionOnMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setMarkPositionOnMap */ "./src/assets/js/setMarkPositionOnMap.js");
 
+window.addEventListener('DOMContentLoaded', () => {
+  Object(_setMarkPositionOnMap__WEBPACK_IMPORTED_MODULE_0__["setMarkPos"])();
+});
+
+/***/ }),
+
+/***/ "./src/assets/js/setMarkPositionOnMap.js":
+/*!***********************************************!*\
+  !*** ./src/assets/js/setMarkPositionOnMap.js ***!
+  \***********************************************/
+/*! exports provided: setMarkPos */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setMarkPos", function() { return setMarkPos; });
+const setMarkPos = () => {
+  try {
+    const park = document.querySelector('.park');
+    const mark = document.querySelector('.park__mark');
+    window.addEventListener('resize', e => {
+      mark.style.left = 937 - (1440 - park.clientWidth) / 2 + 'px';
+      if (window.matchMedia("(max-width: 575px)").matches) {
+        mark.style.display = 'none';
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 /***/ })
 
