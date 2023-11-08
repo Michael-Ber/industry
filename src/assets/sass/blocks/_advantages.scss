@@ -1,0 +1,65 @@
+@import '../var/variables';
+
+.advantages {
+    position: relative;
+    padding: 0 0 180px 0;
+
+
+    &__bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(305px, auto));
+        gap: 20px;
+        margin-top: 105px;
+
+    }
+
+    .card-advantages {
+        box-shadow: 16px 16px 45px 0 rgba(#000, .1);
+        background-color: $white;
+
+        &__top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $main-color;
+            min-height: 105px;
+            border-radius: 3px;
+        }
+
+        &__content {
+            padding: 15px 50px 40px 30px;
+            background-color: $white;
+        }
+
+        &__title {
+            font-size: 20px;
+            font-weight: 900;
+            width: min(200px, 80%);
+        }
+
+        &__list {
+            margin-top: 20px;
+            list-style-type: disc;
+            padding-left: 25px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $gray;
+        }
+
+        &__descr {
+            width: min(217px, 80%);
+            margin-top: 20px;
+            font-size: 12px;
+            font-weight: 400;
+            color: $gray;
+        }
+
+    }
+}
