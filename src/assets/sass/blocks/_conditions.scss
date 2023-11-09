@@ -1,32 +1,55 @@
 .conditions {
     margin-top: 200px;
-    padding-bottom: 100px;
-
+    @media(max-width: $breakpoint-767) {
+        margin-top: 110px;
+    }
     &__wrapper {
         margin-top: 100px;
+        padding: 0 10px;
+        @media(max-width: $breakpoint-767) {
+            margin-top: 50px;
+        }
     }
 
     &__timeline {
+        @include adaptiv-columns(420, 300, 3);
         display: grid;
-        grid-template-columns: repeat(3, minmax(300px, 434px));
+        justify-content: center;
         row-gap: 130px;
-    }
-}
-
-.timeline-conditions {
-
-    &__item {
-        position: relative;
+        
+        @media(max-width: $breakpoint-1199) {
+            @include adaptiv-columns(420, 300, 2);
+        }
+        @media(max-width: $breakpoint-767) {
+            @include adaptiv-columns(420, 300, 1);
+            row-gap: 80px;
+        }
     }
 }
 
 .item-timeline-conditions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    &__top {
+        position: relative;
+        order: 1;
+        @media(max-width: $breakpoint-767) {
+            order: 2;
+            margin: 0 auto;
+        }
+    }
+    &__bottom {
+        order: 2;
+        @media(max-width: $breakpoint-767) {
+            order: 1;
+        }
+    }
 
     &__chain {
         @include adaptiv-font(32, 20);
         font-family: 'Bebas Neue';
         font-weight: 700;
-        margin-bottom: 30px;
         color: $main-color;
         width: 60px;
         height: 60px;
@@ -34,6 +57,9 @@
         justify-content: center;
         align-items: center;
         border: 2px solid $main-color;
+        @media(max-width: $breakpoint-767) {
+            margin-bottom: 0;
+        }
     }
 
     &__line {
@@ -43,32 +69,15 @@
         width: calc(100% - 60px);
         height: 2px;
         background-color: $main-color;
-
-        &_arrow {
-
-            &::after,
-            &::before {
-                content: '';
-                position: absolute;
-                right: 0;
-                display: block;
-                width: 10px;
-                height: 2px;
-                background-color: $main-color;
-            }
-
-            &::after {
-                transform: rotate(45deg);
-                top: -4px;
-            }
-
-            &::before {
-                transform: rotate(-45deg);
-                top: 4px;
-            }
+        @media(max-width: $breakpoint-767) {
+            top: 100%;
+            left: 50%;
+            height: 100%;
+            width: 2px;
+            bottom: 30px;
         }
+        
     }
-
     &__title {
         @include adaptiv-font(20, 14);
         font-weight: 700;
@@ -77,9 +86,71 @@
     &__descr {
         @include adaptiv-font(16, 12);
         font-weight: 500;
-        margin-top: 12px;
         padding-right: 10px;
     }
+
+    #line-1, #line-2, #line-3, #line-4, #line-5 {
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            display: none;
+            width: 10px;
+            height: 2px;
+            background-color: $main-color;
+        }
+
+        &::after {
+            transform: rotate(45deg);
+            top: -4px;
+            @media(max-width: $breakpoint-767) {
+                top: 93%;
+                left: -7px;
+            }
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+            top: 4px;
+            @media(max-width: $breakpoint-767) {
+                top: 93%;
+                left: -1px;
+            }
+        }
+    }
+    #line-3, #line-5 {
+        &::after,
+        &::before {
+            display: block;
+        }
+    }
+    
+    @media(max-width: $breakpoint-1199) {
+        #line-3 {
+            &::after,
+            &::before {
+                display: none;
+            }
+            
+        }
+        #line-2, #line-4 {
+            &::after,
+            &::before {
+                display: block;
+            }
+        }
+    }
+    @media(max-width: $breakpoint-767) {
+        #line-1, #line-2, #line-3, #line-4, #line-5 {
+            &::after,
+            &::before {
+                display: block;
+            }
+            
+        }
+    }
+    
 }
 
 .item-timeline-conditions-include {
@@ -87,13 +158,13 @@
     margin-left: 17px;
 
     &__block {
-        // position: absolute;
-        // top: -40%;
-        // left: 17px;
         margin-top: -20%;
         padding: 34px 46px 55px 27px;
         background-color: $main-color;
         clip-path: polygon(7% 0, 100% 0, 100% 84%, 93% 100%, 0 100%, 0 16%);
+        @media(max-width: $breakpoint-767) {
+            margin-top: 0;
+        }
     }
 
     &__title {
@@ -111,14 +182,16 @@
 
     &__bottom {
         position: relative;
-        // position: absolute;
-        // bottom: -30%;
-        // left: 30px;
         margin-top: -7%;
-        margin-left: 27px;
+        margin-left: 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 20px;
+        @media(max-width: $breakpoint-991) {
+            gap: 10px;
+            margin-left: 10px;
+        }
     }
 
     &__link {
@@ -130,6 +203,14 @@
             text-decoration: underline;
         }
     }
+    &__room {
+        @include adaptiv-minwidth(215, 160);
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
 .conditions-btn-wrapper {
@@ -137,63 +218,4 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-}
-.btn-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn-subwrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    filter: drop-shadow(0 4px 4px rgba(#000, 0.25));
-    &_297 {
-        @include adaptiv-width(297, 150);
-        @include adaptiv-height(49, 30);
-    }
-    &_414 {
-        @include adaptiv-width(414, 150);
-        @include adaptiv-height(68, 40);
-    }
-    .btn-common {
-        width: 100%;
-        height: 100%;
-        text-transform: uppercase;
-        clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
-        &_green {
-            @include adaptiv-font(20, 11);
-            background-color: $main-color;
-            color: $white;
-        }
-        &_white {
-            @include adaptiv-font(18, 11);
-            background-color: $white;
-            color: $main-color;
-        }
-    }
-    .btn-background {
-        position: absolute;
-        top: 5px;
-        left: -10px;
-        width: 297px;
-        height: 49px;
-        clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
-        z-index: -1;
-        &_297 {
-            @include adaptiv-width(297, 150);
-            @include adaptiv-height(49, 30);
-        }
-        &_414 {
-            @include adaptiv-width(414, 150);
-            @include adaptiv-height(68, 40);
-        }
-        &_green {
-            background-color: $main-color;
-        }
-        &_white {
-            background-color: $white;
-        }
-    }
 }

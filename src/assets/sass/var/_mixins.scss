@@ -78,6 +78,14 @@ $maxWidth: 1880;
     $addSize: $pcSize - $mobSize;
     width: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
 }
+@mixin adaptiv-columns($pcSize, $mobSize, $colNum) {
+    $addSize: $pcSize - $mobSize;
+    grid-template-columns: repeat($colNum, calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}))) ;
+}
+@mixin adaptiv-minwidth($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    min-width: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
+}
 
 @mixin adaptiv-maxwidth($pcSize, $mobSize) {
     $addSize: $pcSize - $mobSize;
