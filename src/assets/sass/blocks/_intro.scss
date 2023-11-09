@@ -5,13 +5,14 @@
     position: relative;
 
     &__title {
+        @include adaptiv-font(64, 17);
         position: absolute;
         top: 45px;
         left: 50%;
         transform: translateX(-50%);
         display: inline-block;
         font-family: 'Bebas Neue';
-        font-size: 64px;
+        // font-size: 64px;
         background-color: $main-color;
         background-clip: border-box;
         color: $white;
@@ -21,24 +22,24 @@
         clip-path: polygon(0% 25%, 3% 0%, 100% 0%, 100% 0%, 100% 75%, 97% 100%, 0% 100%, 0% 100%);
         z-index: 10;
 
-        @media(max-width: $breakpoint-1399) {
-            font-size: 54px;
-        }
+        // @media(max-width: $breakpoint-1399) {
+        //     font-size: 54px;
+        // }
 
-        @media(max-width: $breakpoint-1299) {
-            font-size: 44px;
-        }
+        // @media(max-width: $breakpoint-1299) {
+        //     font-size: 44px;
+        // }
 
-        @media(max-width: $breakpoint-991) {
-            font-size: 34px;
-        }
+        // @media(max-width: $breakpoint-991) {
+        //     font-size: 34px;
+        // }
 
-        @media(max-width: $breakpoint-767) {
-            font-size: 26px;
-        }
+        // @media(max-width: $breakpoint-767) {
+        //     font-size: 26px;
+        // }
 
         @media(max-width: $breakpoint-575) {
-            font-size: 17px;
+            // font-size: 17px;
             top: 10px;
         }
     }
@@ -56,11 +57,29 @@
         }
     }
 
-    .cutted-btn-common {
+    // .cutted-btn-common {
+    //     position: absolute;
+    //     bottom: 80px;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+
+    //     @media(max-width: $breakpoint-991) {
+    //         bottom: 40px;
+    //     }
+
+    //     @media(max-width: $breakpoint-575) {
+    //         bottom: 20px;
+    //     }
+    // }
+    .intro-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
         position: absolute;
         bottom: 80px;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 100;
 
         @media(max-width: $breakpoint-991) {
             bottom: 40px;
