@@ -5,6 +5,8 @@
 @import './blocks/park';
 @import './blocks/advantages';
 @import './blocks/infra';
+@import './blocks/services';
+@import './blocks/conditions';
 
 * {
     margin: 0;
@@ -15,6 +17,7 @@
 html,
 body {
     height: 100%;
+    color: $gray;
 }
 
 body {
@@ -105,6 +108,7 @@ a {
         width: 100%;
         height: 100%;
         z-index: -1;
+        box-shadow: 4px 4px 4px rgba(#000, .25);
 
         @media(max-width: $breakpoint-991) {
             top: calc(50% + 10px);
@@ -166,4 +170,27 @@ a {
     font-weight: 900;
     text-transform: uppercase;
     text-align: center;
+}
+
+.bg-section-white {
+    width: 100%;
+    height: 524px;
+    background-color: $bg-white;
+    clip-path: polygon(12% 0, 100% 0, 100% 75%, 88% 100%, 0 100%, 0 25%);
+    position: absolute;
+    // top: calc(50% + 50px);
+    // left: 0;
+    z-index: -1;
+    // transform: translate(0, -50%);
+
+    // @media(max-width: $breakpoint-1399) {
+    //     height: 1000px;
+    // }
+
+    // @media(max-width: $breakpoint-767) {
+    //     height: calc(100% - 180px);
+    //     clip-path: unset;
+    //     top: 50%;
+    //     transform: translate(0, -50%);
+    // }
 }

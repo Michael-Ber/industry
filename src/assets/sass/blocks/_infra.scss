@@ -60,44 +60,46 @@
 
 
 
-    .card-infra {
-        background-color: $white;
-        box-shadow: 16px 16px 48px 0 rgba(#000, .1);
-        padding: 25px 25px 25px 42px;
-        clip-path: polygon(7% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
 
-        &__wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
 
-        &__metric,
-        &__descr {
-            display: block;
-        }
+}
 
-        &__metric {
-            @include adaptiv-font(22, 16);
-            font-weight: 900;
-        }
+.card-infra {
+    background-color: $white;
+    box-shadow: 16px 16px 48px 0 rgba(#000, .1);
+    padding: 25px 25px 25px 42px;
+    clip-path: polygon(7% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
 
-        &__descr {
-            @include adaptiv-font(14, 12);
-            font-size: 14px;
-            font-weight: 500;
-            margin-top: 5px;
-        }
-
-        &__text {
-            @include adaptiv-font(12, 11);
-            font-weight: 400;
-            margin-top: 5px;
-        }
-
-        &__icon {
-            float: left;
-        }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 
+    &__metric,
+    &__descr {
+        display: block;
+    }
+
+    &__metric {
+        @include adaptiv-font(22, 16);
+        font-weight: 900;
+    }
+
+    &__descr {
+        @include adaptiv-font(14, 12);
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    &__text {
+        @include adaptiv-font(12, 11);
+        font-weight: 400;
+        margin-top: 5px;
+    }
+
+    &__icon {
+        float: left;
+    }
 }

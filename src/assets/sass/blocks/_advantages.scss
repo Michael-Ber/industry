@@ -9,26 +9,41 @@
     }
 
     &__bg {
-        width: 100%;
-        height: 524px;
-        background-color: $bg-white;
-        clip-path: polygon(12% 0, 100% 0, 100% 75%, 88% 100%, 0 100%, 0 25%);
-        position: absolute;
         top: calc(50% + 50px);
         left: 0;
-        z-index: -1;
         transform: translate(0, -50%);
 
         @media(max-width: $breakpoint-1399) {
-            height: 1000px;
+            height: 1000px !important;
         }
 
         @media(max-width: $breakpoint-767) {
-            height: calc(100% - 180px);
-            clip-path: unset;
-            top: 50%;
-            transform: translate(0, -50%);
+            height: calc(100% - 180px) !important;
+            clip-path: unset !important;
+            top: 50% !important;
+            transform: translate(0, -50%) !important;
         }
+
+        // width: 100%;
+        // height: 524px;
+        // background-color: $bg-white;
+        // clip-path: polygon(12% 0, 100% 0, 100% 75%, 88% 100%, 0 100%, 0 25%);
+        // position: absolute;
+        // top: calc(50% + 50px);
+        // left: 0;
+        // z-index: -1;
+        // transform: translate(0, -50%);
+
+        // @media(max-width: $breakpoint-1399) {
+        //     height: 1000px;
+        // }
+
+        // @media(max-width: $breakpoint-767) {
+        //     height: calc(100% - 180px);
+        //     clip-path: unset;
+        //     top: 50%;
+        //     transform: translate(0, -50%);
+        // }
     }
 
 
@@ -43,58 +58,60 @@
 
     }
 
-    .card-advantages {
-        height: 445px;
-        box-shadow: 16px 16px 45px 0 rgba(#000, .1);
-        background-color: $white;
 
-        &__top {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $main-color;
-            min-height: 105px;
-            border-radius: 3px;
-        }
+}
 
-        &__content {
-            padding: 15px 50px 0px 30px;
-            background-color: $white;
-        }
+.card-advantages {
+    height: 445px;
+    box-shadow: 16px 16px 45px 0 rgba(#000, .1);
+    background-color: $white;
 
-        &__title {
-            @include adaptiv-font(20, 16);
-            font-weight: 900;
-            width: min(200px, 80%);
-        }
-
-        &__list {
-            @include adaptiv-font(14, 12);
-            margin-top: 20px;
-            list-style-type: disc;
-            padding-left: 25px;
-            font-weight: 400;
-            color: $gray;
-        }
-
-        &__descr {
-            width: min(217px, 100%);
-            margin-top: 20px;
-            font-size: 12px;
-            font-weight: 400;
-            color: $gray;
-        }
-
-    }
-
-    .advantages-btn-wrapper {
+    &__top {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 50px;
+        background-color: $main-color;
+        min-height: 105px;
+        border-radius: 3px;
+    }
 
-        @media(max-width: $breakpoint-767) {
-            padding-bottom: 20px;
-        }
+    &__content {
+        padding: 15px 50px 0px 30px;
+        background-color: $white;
+    }
+
+    &__title {
+        @include adaptiv-font(20, 16);
+        font-weight: 900;
+        width: min(200px, 80%);
+    }
+
+    &__list {
+        @include adaptiv-font(14, 12);
+        margin-top: 20px;
+        list-style-type: disc;
+        padding-left: 25px;
+        font-weight: 400;
+        color: $gray;
+    }
+
+    &__descr {
+        width: min(217px, 100%);
+        margin-top: 20px;
+        font-size: 12px;
+        font-weight: 400;
+        color: $gray;
+    }
+
+}
+
+.advantages-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    @media(max-width: $breakpoint-767) {
+        padding-bottom: 20px;
     }
 }

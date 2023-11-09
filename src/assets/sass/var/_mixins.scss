@@ -72,3 +72,14 @@ $maxWidth: 1880;
         font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
     }
 }
+
+
+@mixin adaptiv-width($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    width: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
+}
+
+@mixin adaptiv-maxwidth($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    max-width: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
+}
