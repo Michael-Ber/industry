@@ -33,106 +33,169 @@ a {
     color: $black;
 }
 
-.btn-common {
-    width: 100%;
-    border: none;
-    text-transform: uppercase;
-    transition: .3s all ease;
-    cursor: pointer;
-}
-
-.btn-subwrapper-white {
-    width: min(297px, 47%);
-}
-
-.btn-subwrapper-green {
-    width: min(414px, 40%);
-}
-
-.btn-green {
-    @include adaptiv-font(20, 11);
-    background-color: $main-color;
-    color: $white;
-    font-weight: 700;
-    padding: 22px 0px;
-
-    @media(max-width: $breakpoint-1199) {
-        padding: 18px 0px !important;
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__subwrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: drop-shadow(0 4px 4px rgba(#000, 0.25));
+        &_297 {
+            @include adaptiv-width(297, 150);
+            @include adaptiv-height(49, 30);
+        }
+        &_414 {
+            @include adaptiv-width(414, 150);
+            @include adaptiv-height(68, 40);
+        }
+        
     }
-
-    @media(max-width: $breakpoint-991) {
-        padding: 14px 0 !important;
-    }
-
-    @media(max-width: $breakpoint-575) {
-        padding: 10px 0px !important;
-    }
-
-    &:hover {
-        background-color: darken($main-color, 10%);
-    }
-}
-
-.btn-white {
-    @include adaptiv-font(18, 11);
-    background-color: $white;
-    color: $main-color;
-    font-weight: 500;
-    padding: 14px 0px;
-
-    @media(max-width: $breakpoint-1199) {
-        padding: 12px 0px !important;
-    }
-
-    @media(max-width: $breakpoint-991) {
-        padding: 10px 0 !important;
-    }
-
-    &:hover {
-        background-color: darken($white, 10%);
-    }
-}
-
-.cutted-btn-common {
-    position: relative;
-    clip-path: polygon(-4% 50%, 5% 0%, 100% 0%, 100% 0%, 100% 75%, 92% 122%, 0% 122%, -4% 122%);
-    z-index: 100;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: calc(50% + 12px);
-        left: calc(50% - 12px);
-        transform: translate(-50%, -50%);
-        display: block;
+    &__common {
         width: 100%;
         height: 100%;
+        text-transform: uppercase;
+        clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
+        border: none;
+        &_green {
+            @include adaptiv-font(20, 11);
+            background-color: $main-color;
+            color: $white;
+        }
+        &_white {
+            @include adaptiv-font(18, 11);
+            background-color: $white;
+            color: $main-color;
+        }
+    }
+    &__background {
+        position: absolute;
+        top: 5px;
+        left: -10px;
+        width: 297px;
+        height: 49px;
+        clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
         z-index: -1;
-        box-shadow: 4px 4px 4px rgba(#000, .25);
-
-        @media(max-width: $breakpoint-991) {
-            top: calc(50% + 10px);
+        &_297 {
+            @include adaptiv-width(297, 150);
+            @include adaptiv-height(49, 30);
         }
-
-        @media(max-width: $breakpoint-575) {
-            top: calc(50% + 9px);
-            left: calc(50% - 7px);
+        &_414 {
+            @include adaptiv-width(414, 150);
+            @include adaptiv-height(68, 40);
+        }
+        &_green {
+            background-color: $main-color;
+        }
+        &_white {
+            background-color: $white;
         }
     }
-
 }
 
-.cutted-btn-green {
-    &::after {
-        background-color: $white;
-    }
-}
 
-.cutted-btn-white {
-    &::after {
-        background-color: $main-color;
-    }
-}
+// .btn-common {
+//     width: 100%;
+//     border: none;
+//     text-transform: uppercase;
+//     transition: .3s all ease;
+//     cursor: pointer;
+// }
+
+// .btn-subwrapper-white {
+//     width: min(297px, 47%);
+// }
+
+// .btn-subwrapper-green {
+//     width: min(414px, 40%);
+// }
+
+// .btn-green {
+//     @include adaptiv-font(20, 11);
+//     background-color: $main-color;
+//     color: $white;
+//     font-weight: 700;
+//     padding: 22px 0px;
+
+//     @media(max-width: $breakpoint-1199) {
+//         padding: 18px 0px !important;
+//     }
+
+//     @media(max-width: $breakpoint-991) {
+//         padding: 14px 0 !important;
+//     }
+
+//     @media(max-width: $breakpoint-575) {
+//         padding: 10px 0px !important;
+//     }
+
+//     &:hover {
+//         background-color: darken($main-color, 10%);
+//     }
+// }
+
+// .btn-white {
+//     @include adaptiv-font(18, 11);
+//     background-color: $white;
+//     color: $main-color;
+//     font-weight: 500;
+//     padding: 14px 0px;
+
+//     @media(max-width: $breakpoint-1199) {
+//         padding: 12px 0px !important;
+//     }
+
+//     @media(max-width: $breakpoint-991) {
+//         padding: 10px 0 !important;
+//     }
+
+//     &:hover {
+//         background-color: darken($white, 10%);
+//     }
+// }
+
+// .cutted-btn-common {
+//     position: relative;
+//     clip-path: polygon(-4% 50%, 5% 0%, 100% 0%, 100% 0%, 100% 75%, 92% 122%, 0% 122%, -4% 122%);
+//     z-index: 100;
+
+//     &::after {
+//         content: '';
+//         position: absolute;
+//         top: calc(50% + 12px);
+//         left: calc(50% - 12px);
+//         transform: translate(-50%, -50%);
+//         display: block;
+//         width: 100%;
+//         height: 100%;
+//         z-index: -1;
+//         box-shadow: 4px 4px 4px rgba(#000, .25);
+
+//         @media(max-width: $breakpoint-991) {
+//             top: calc(50% + 10px);
+//         }
+
+//         @media(max-width: $breakpoint-575) {
+//             top: calc(50% + 9px);
+//             left: calc(50% - 7px);
+//         }
+//     }
+
+// }
+
+// .cutted-btn-green {
+//     &::after {
+//         background-color: $white;
+//     }
+// }
+
+// .cutted-btn-white {
+//     &::after {
+//         background-color: $main-color;
+//     }
+// }
 
 .container-outer {
     max-width: 1440px;

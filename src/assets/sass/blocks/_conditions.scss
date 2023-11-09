@@ -1,5 +1,6 @@
 .conditions {
     margin-top: 200px;
+    padding-bottom: 100px;
 
     &__wrapper {
         margin-top: 100px;
@@ -136,5 +137,63 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    padding-bottom: 50px;
+}
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-subwrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 4px 4px rgba(#000, 0.25));
+    &_297 {
+        @include adaptiv-width(297, 150);
+        @include adaptiv-height(49, 30);
+    }
+    &_414 {
+        @include adaptiv-width(414, 150);
+        @include adaptiv-height(68, 40);
+    }
+    .btn-common {
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
+        &_green {
+            @include adaptiv-font(20, 11);
+            background-color: $main-color;
+            color: $white;
+        }
+        &_white {
+            @include adaptiv-font(18, 11);
+            background-color: $white;
+            color: $main-color;
+        }
+    }
+    .btn-background {
+        position: absolute;
+        top: 5px;
+        left: -10px;
+        width: 297px;
+        height: 49px;
+        clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
+        z-index: -1;
+        &_297 {
+            @include adaptiv-width(297, 150);
+            @include adaptiv-height(49, 30);
+        }
+        &_414 {
+            @include adaptiv-width(414, 150);
+            @include adaptiv-height(68, 40);
+        }
+        &_green {
+            background-color: $main-color;
+        }
+        &_white {
+            background-color: $white;
+        }
+    }
 }

@@ -83,3 +83,7 @@ $maxWidth: 1880;
     $addSize: $pcSize - $mobSize;
     max-width: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
 }
+@mixin adaptiv-height($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    height: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
+}
