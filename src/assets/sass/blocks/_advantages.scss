@@ -4,6 +4,9 @@
     position: relative;
     padding: 0 0 180px 0;
 
+    @media(max-width: $breakpoint-767) {
+        padding: 0 0 100px 0;
+    }
 
     &__bg {
         width: 100%;
@@ -21,9 +24,14 @@
         }
 
         @media(max-width: $breakpoint-767) {
-            height: 1900px;
+            height: calc(100% - 180px);
+            clip-path: unset;
+            top: 50%;
+            transform: translate(0, -50%);
         }
     }
+
+
 
     &__wrapper {
         display: grid;
@@ -84,5 +92,9 @@
         justify-content: center;
         align-items: center;
         margin-top: 50px;
+
+        @media(max-width: $breakpoint-767) {
+            padding-bottom: 20px;
+        }
     }
 }
