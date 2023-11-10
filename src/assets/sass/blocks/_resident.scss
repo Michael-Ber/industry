@@ -1,0 +1,88 @@
+.resident {
+    margin-top: 200px;
+    padding-bottom: 100px;
+
+    &__wrapper {
+        padding-left: 80px;
+    }
+
+    &__title {
+        margin-bottom: 70px;
+    }
+
+    &__carousel {
+        overflow: hidden;
+    }
+}
+.carousel-title {
+}
+.carousel-resident {
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    &__slide {
+        @include adaptiv-width(522, 300);
+        height: 194px;
+        filter: drop-shadow(4px 4px 4px rgba(#000, .1));
+        flex: 0 0 auto;
+    }
+    &__btns {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+        margin: 10px 80px 0 0;
+
+    }
+
+
+    &__prev {
+    }
+
+    &__next {
+        transform: rotate(180deg);
+    }
+}
+.slide-carousel-resident {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        clip-path: polygon(0 0, 92% 0, 100% 23%, 100% 100%, 0 100%, 0% 50%);
+        padding: 6px 6px 6px 30px;
+        background-color: $white;
+        height: 100%;
+    }
+
+    &__descr {
+        text-align: center;
+        padding-right: 40px;
+    }
+
+    &__title {
+        @include adaptiv-font(18, 12);
+        font-weight: 700;
+    }
+
+    &__text {
+        @include adaptiv-font(14, 10);
+        font-weight: 500;
+    }
+
+    &__img {
+        flex: 0 0 181px;
+        height: 181px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

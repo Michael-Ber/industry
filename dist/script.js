@@ -118,7 +118,7 @@ const setMarkPos = () => {
     const park = document.querySelector('.park');
     const mark = document.querySelector('.park__mark');
     const markOnSchema = document.querySelector('.schema__mark');
-    const pathElement = document.querySelector('#path');
+    const pathElement = document.querySelectorAll('.schema .schema__img svg path')[27];
     const dialogBox = document.querySelector('.schema__dialog');
     window.addEventListener('resize', e => {
       mark.style.left = 937 - (1440 - park.clientWidth) / 2 + 'px';

@@ -3,7 +3,7 @@ export const setMarkPos = () => {
         const park = document.querySelector('.park');
         const mark = document.querySelector('.park__mark');
         const markOnSchema = document.querySelector('.schema__mark');
-        const pathElement = document.querySelector('#path');
+        const pathElement = document.querySelectorAll('.schema .schema__img svg path')[27];
         const dialogBox = document.querySelector('.schema__dialog');
 
         window.addEventListener('resize', (e) => {
@@ -12,6 +12,7 @@ export const setMarkPos = () => {
                 mark.style.display = 'none';
             }
         })
+        
 
         pathElement.addEventListener('mouseenter', () => {
             markOnSchema.classList.add('schema__mark_active');
