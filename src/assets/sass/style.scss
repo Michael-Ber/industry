@@ -7,6 +7,8 @@
 @import './blocks/infra';
 @import './blocks/services';
 @import './blocks/conditions';
+@import './blocks/support';
+@import './blocks/schema';
 
 * {
     margin: 0;
@@ -37,39 +39,65 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+
+
     &__subwrapper {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         filter: drop-shadow(0 4px 4px rgba(#000, 0.25));
+
         &_297 {
             @include adaptiv-width(297, 150);
             @include adaptiv-height(49, 30);
         }
+
         &_414 {
             @include adaptiv-width(414, 150);
             @include adaptiv-height(68, 40);
         }
-        
+
     }
+
     &__common {
         width: 100%;
         height: 100%;
         text-transform: uppercase;
         clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
         border: none;
+        transition: .3s all ease;
+        cursor: pointer;
+
         &_green {
             @include adaptiv-font(20, 11);
             background-color: $main-color;
             color: $white;
+
+            &:hover {
+                background-color: darken($main-color, 10%);
+
+                &+.btn-wrapper__background {
+                    background-color: darken($white, 10%);
+                }
+            }
         }
+
         &_white {
             @include adaptiv-font(18, 11);
             background-color: $white;
             color: $main-color;
+
+            &:hover {
+                background-color: darken($white, 10%);
+
+                &+.btn-wrapper__background {
+                    background-color: darken($main-color, 10%);
+                }
+            }
         }
     }
+
     &__background {
         position: absolute;
         top: 5px;
@@ -77,18 +105,23 @@ a {
         width: 297px;
         height: 49px;
         clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
+        transition: .3s all ease;
         z-index: -1;
+
         &_297 {
             @include adaptiv-width(297, 150);
             @include adaptiv-height(49, 30);
         }
+
         &_414 {
             @include adaptiv-width(414, 150);
             @include adaptiv-height(68, 40);
         }
+
         &_green {
             background-color: $main-color;
         }
+
         &_white {
             background-color: $white;
         }
@@ -99,6 +132,32 @@ a {
 .container-outer {
     max-width: 1440px;
     margin: 0 auto;
+}
+
+.container-adaptive {
+    @include adaptiv-maxwidth(1280, 540);
+    // max-width: 1280px;
+    margin: 0 auto;
+
+    // @media(max-width: $breakpoint-1399) {
+    //     max-width: 1200px;
+    // }
+
+    // @media(max-width: $breakpoint-1199) {
+    //     max-width: 960px;
+    // }
+
+    // @media(max-width: $breakpoint-991) {
+    //     max-width: 720px;
+    // }
+
+    // @media(max-width: $breakpoint-767) {
+    //     max-width: 540px;
+    // }
+
+    @media(max-width: $breakpoint-575) {
+        max-width: 100%;
+    }
 }
 
 .container {
@@ -134,25 +193,21 @@ a {
     text-align: center;
 }
 
-.bg-section-white {
+.bg-section {
     width: 100%;
-    height: 524px;
-    background-color: $bg-white;
-    clip-path: polygon(12% 0, 100% 0, 100% 75%, 88% 100%, 0 100%, 0 25%);
+    // height: 524px;
+    height: 85%;
+
+    // clip-path: polygon(12% 0, 100% 0, 100% 75%, 88% 100%, 0 100%, 0 25%);
+    clip-path: polygon(7% 0, 100% 0, 100% 78%, 93% 100%, 0 100%, 0 22%);
     position: absolute;
-    // top: calc(50% + 50px);
-    // left: 0;
     z-index: -1;
-    // transform: translate(0, -50%);
 
-    // @media(max-width: $breakpoint-1399) {
-    //     height: 1000px;
-    // }
+    &_white {
+        background-color: $bg-white;
+    }
 
-    // @media(max-width: $breakpoint-767) {
-    //     height: calc(100% - 180px);
-    //     clip-path: unset;
-    //     top: 50%;
-    //     transform: translate(0, -50%);
-    // }
+    &_green {
+        background-color: $main-color;
+    }
 }

@@ -16,8 +16,10 @@
             top: calc(50% + 150px) !important;
             clip-path: unset !important;
         }
+    }
 
-
+    &__wrapper {
+        padding: 0 10px;
     }
 
     &__logo {
@@ -42,13 +44,14 @@
         text-align: center;
     }
 
-    &__cards {
+    &__grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(300px, 522px));
-        grid-template-rows: repeat(2, 1fr);
+        // grid-template-rows: repeat(3, 1fr);
         gap: 20px;
         justify-content: center;
         margin-top: 70px;
+
 
         @media(max-width: $breakpoint-767) {
             grid-template-columns: minmax(300px, 522px);
@@ -134,12 +137,12 @@
 
     &__number {
         @include adaptiv-font(48, 20);
+        @include adaptiv-width(75, 60);
+        @include adaptiv-height(75, 60);
         font-family: 'Bebas Neue';
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 75px;
-        height: 75px;
         position: absolute;
         top: 0;
         left: 0;
