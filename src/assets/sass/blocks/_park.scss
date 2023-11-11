@@ -110,6 +110,7 @@
 
     &__map-wrapper {
         min-width: 100%;
+        min-height: 634px;
     }
 
     &__map {
@@ -119,7 +120,6 @@
         iframe {
             align-content: start;
             border: none;
-
         }
     }
 
