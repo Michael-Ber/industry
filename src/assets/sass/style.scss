@@ -127,6 +127,15 @@ a {
         &_414 {
             @include adaptiv-width(414, 150);
             @include adaptiv-height(68, 40);
+            @media(max-width: $breakpoint-1399) {
+                left: -9px;
+            }
+            @media(max-width: $breakpoint-991) {
+                left: -8px;
+            }
+            @media(max-width: $breakpoint-767) {
+                left: -7px;
+            }
             @media(max-width: $breakpoint-575) {
                 left: -6px;
             }
