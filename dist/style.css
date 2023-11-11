@@ -1849,20 +1849,25 @@ a {
   width: calc(147 / 1505 * (100vw - 375px) + 150px);
   height: calc(19 / 1505 * (100vw - 375px) + 30px);
 }
+@media (max-width: 575.99px) {
+  .btn-wrapper__background_297 {
+    left: -8px;
+  }
+}
 .btn-wrapper__background_414 {
   width: calc(264 / 1505 * (100vw - 375px) + 150px);
   height: calc(28 / 1505 * (100vw - 375px) + 40px);
+}
+@media (max-width: 575.99px) {
+  .btn-wrapper__background_414 {
+    left: -6px;
+  }
 }
 .btn-wrapper__background_green {
   background-color: #01abbb;
 }
 .btn-wrapper__background_white {
   background-color: #ffffff;
-}
-@media (max-width: 575.99px) {
-  .btn-wrapper__background {
-    left: -9px;
-  }
 }
 
 .container-outer {
