@@ -372,6 +372,7 @@
 }
 .park__map-wrapper {
   min-width: 100%;
+  min-height: 634px;
 }
 .park__map {
   position: relative;
@@ -1857,6 +1858,21 @@ a {
 .btn-wrapper__background_414 {
   width: calc(264 / 1505 * (100vw - 375px) + 150px);
   height: calc(28 / 1505 * (100vw - 375px) + 40px);
+}
+@media (max-width: 1399.99px) {
+  .btn-wrapper__background_414 {
+    left: -9px;
+  }
+}
+@media (max-width: 991.99px) {
+  .btn-wrapper__background_414 {
+    left: -8px;
+  }
+}
+@media (max-width: 767.99px) {
+  .btn-wrapper__background_414 {
+    left: -7px;
+  }
 }
 @media (max-width: 575.99px) {
   .btn-wrapper__background_414 {
