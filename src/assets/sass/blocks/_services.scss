@@ -47,7 +47,6 @@
     &__grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(300px, 522px));
-        // grid-template-rows: repeat(3, 1fr);
         gap: 20px;
         justify-content: center;
         margin-top: 70px;

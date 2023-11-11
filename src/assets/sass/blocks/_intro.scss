@@ -6,7 +6,6 @@
 
     &__title {
         @include adaptiv-font(64, 17);
-        // font-size: max(1rem, min(4rem, calc(100vw * 4 / 117.5)));
         position: absolute;
         top: 45px;
         left: 50%;

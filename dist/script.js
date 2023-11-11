@@ -96,10 +96,69 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _setMarkPositionOnMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setMarkPositionOnMap */ "./src/assets/js/setMarkPositionOnMap.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ "./src/assets/js/modal.js");
+
 
 window.addEventListener('DOMContentLoaded', () => {
   Object(_setMarkPositionOnMap__WEBPACK_IMPORTED_MODULE_0__["setMarkPos"])();
+  Object(_modal__WEBPACK_IMPORTED_MODULE_1__["openCloseModal"])();
 });
+
+/***/ }),
+
+/***/ "./src/assets/js/modal.js":
+/*!********************************!*\
+  !*** ./src/assets/js/modal.js ***!
+  \********************************/
+/*! exports provided: openCloseModal */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openCloseModal", function() { return openCloseModal; });
+const openCloseModal = () => {
+  try {
+    const body = document.querySelector('body');
+    const modal = document.querySelector('.modal');
+    const close = document.querySelector('.modal__close');
+    const btns = document.querySelectorAll('.btn-modal');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        openModal();
+      });
+    });
+    close.addEventListener('click', () => {
+      closeModal();
+    });
+    window.addEventListener('resize', () => {
+      closeModal();
+    });
+    function closeModal() {
+      modal.classList.remove('modal_active');
+      body.style.overflow = 'visible';
+      body.style.marginRight = 'unset';
+    }
+    function openModal() {
+      modal.classList.add('modal_active');
+      body.style.overflow = 'hidden';
+      body.style.marginRight = removeTwitching() + 'px';
+    }
+    function removeTwitching() {
+      let div = document.createElement('div');
+      div.style.visibility = 'none';
+      div.style.opacity = '0';
+      div.style.width = '50px;';
+      div.style.height = '50px;';
+      div.style.overflow = 'scroll';
+      body.appendChild(div);
+      let offset = div.offsetWidth - div.clientWidth;
+      div.remove();
+      return offset;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 /***/ }),
 

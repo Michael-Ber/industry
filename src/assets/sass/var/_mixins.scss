@@ -1,62 +1,4 @@
-@mixin cut_block_angle {
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        border-top: 15px solid $white;
-        border-right: 15px solid $main-color;
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        border-bottom: 15px solid $white;
-        border-left: 15px solid $main-color;
-    }
-}
-
-@mixin cut_block_angle_25 {
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        border-top: 25px solid $white;
-        border-right: 25px solid $main-color;
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        border-bottom: 25px solid $white;
-        border-left: 25px solid $main-color;
-    }
-}
-
-@mixin cut_block_angle_40 {
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        border-top: 40px solid $white;
-        border-right: 40px solid $main-color;
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        border-bottom: 40px solid $white;
-        border-left: 40px solid $main-color;
-    }
-}
+@import './variables';
 
 $maxWidth: 1880;
 
@@ -72,11 +14,13 @@ $maxWidth: 1880;
         font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
     }
 }
-
-
 @mixin adaptiv-width($pcSize, $mobSize) {
     $addSize: $pcSize - $mobSize;
     width: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
+}
+@mixin adaptiv-flexBasis($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    flex-basis: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
 }
 @mixin adaptiv-columns($pcSize, $mobSize, $colNum) {
     $addSize: $pcSize - $mobSize;
@@ -94,4 +38,17 @@ $maxWidth: 1880;
 @mixin adaptiv-height($pcSize, $mobSize) {
     $addSize: $pcSize - $mobSize;
     height: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
+}
+@mixin adaptiv-minheight($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    min-height: calc((#{$addSize} / (1880 - 375) * ((100vw - 375px)) + #{$mobSize + px}));
+}
+@mixin calc-width-min($col) {
+    width: min(calc(#{$grid-container + px} - (#{$grid-column + px}*(#{$grid-column-num} - #{$col}) + (#{$grid-column-gap + px}*(#{$grid-column-num} - #{$col})))), 75%);
+}
+@mixin calc-width($col) {
+    width: calc(#{$grid-container + px} - (#{$grid-column + px}*(#{$grid-column-num} - #{$col}) + (#{$grid-column-gap + px}*(#{$grid-column-num} - #{$col}))));
+}
+@mixin grid-template-columns($col, $colNum) {
+    grid-template-columns: repeat($colNum, calc(#{$grid-container + px} - (#{$grid-column + px}*(#{$grid-column-num} - #{$col}) + (#{$grid-column-gap + px}*(#{$grid-column-num} - #{$col})))));
 }

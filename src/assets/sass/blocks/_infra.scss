@@ -8,7 +8,6 @@
     &__wrapper {
         position: relative;
         margin-top: 100px;
-        // padding: 55px 75px 125px 60px;
         min-height: 495px;
 
         @media(max-width: $breakpoint-575) {
@@ -53,7 +52,6 @@
     &__schema {
         position: relative;
         width: 100%;
-        // height: 118px;
 
         @media(max-width: $breakpoint-575) {
             clip-path: unset;
@@ -113,9 +111,5 @@
         @include adaptiv-font(12, 11);
         font-weight: 400;
         margin-top: 5px;
-    }
-
-    &__icon {
-        float: left;
     }
 }

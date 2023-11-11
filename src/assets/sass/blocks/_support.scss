@@ -10,18 +10,13 @@
         top: 130px;
 
         @media(max-width: $breakpoint-991) {
-            // height: calc(100% - 180px) !important;
             clip-path: unset !important;
-            // top: 50% !important;
-            // transform: translate(0, -50%) !important;
         }
 
         @media(max-width: $breakpoint-575) {
             height: 100% !important;
             clip-path: unset !important;
             top: 0;
-            // top: 50% !important;
-            // transform: translate(0, -50%) !important;
         }
     }
 
@@ -66,11 +61,6 @@
     }
 }
 
-.bg-section {
-
-    &_green {}
-}
-
 .card-support {
 
     &__wrapper {
@@ -108,6 +98,4 @@
         background-color: $main-color;
         border-radius: 3px;
     }
-
-    &__icon {}
 }

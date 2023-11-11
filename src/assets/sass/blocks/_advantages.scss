@@ -2,11 +2,9 @@
 
 .advantages {
     position: relative;
-    // padding: 0 0 180px 0;
     margin-top: 200px;
 
     @media(max-width: $breakpoint-767) {
-        // padding: 0 0 100px 0;
         margin-top: 110px;
     }
 
@@ -18,18 +16,13 @@
         @media(max-width: $breakpoint-1399) {
             height: 1000px !important;
         }
-
         @media(max-width: $breakpoint-767) {
             height: calc(100% - 180px) !important;
             clip-path: unset !important;
             top: 50% !important;
             transform: translate(0, -50%) !important;
         }
-
     }
-
-
-
     &__grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(200px, 305px));
@@ -53,10 +46,7 @@
             grid-template-columns: repeat(1, minmax(200px, 305px));
             margin-top: 50px;
         }
-
     }
-
-
 }
 
 .card-advantages {

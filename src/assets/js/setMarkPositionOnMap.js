@@ -12,8 +12,6 @@ export const setMarkPos = () => {
                 mark.style.display = 'none';
             }
         })
-        
-
         pathElement.addEventListener('mouseenter', () => {
             markOnSchema.classList.add('schema__mark_active');
             dialogBox.classList.add('dialog-schema_active');
