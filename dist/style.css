@@ -1610,7 +1610,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   padding: 70px 0 200px 0;
   background-color: #ffffff;
-  margin-top: 100px;
+  margin: 50px 0;
 }
 @media (max-width: 991.99px) {
   .modal__wrapper {

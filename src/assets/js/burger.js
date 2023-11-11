@@ -10,6 +10,9 @@ export const burgerInteraction = () => {
         close.addEventListener('click', () => {
             menu.classList.remove('header-burger__menu_active');
         })
+        window.addEventListener('scroll', () => {
+            menu.classList.remove('header-burger__menu_active');
+        })
     } catch (error) {
         console.log(error)
     }
