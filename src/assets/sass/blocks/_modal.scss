@@ -1,13 +1,12 @@
 .modal {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     z-index: -1;
     opacity: 0;
     transition: .3s opacity ease;
@@ -21,27 +20,30 @@
     &__wrapper {
         @include calc-width-min(10);
         position: relative;
-        background-color: $white;
-        padding: 70px 0 200px 0;
+        min-height: 90%;
         border-radius: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
         box-shadow: 0 0 10px rgba(#000, .3);
-        
+        padding: 70px 0 200px 0;
+        background-color: $white;
+        margin-top: 100px;
         @media(max-width:$breakpoint-991) {
             padding: 50px 0 50px 0;
         }
+        
     }
     &__subwrapper {
         @include calc-width-min(8);
+        
     }
 
     &__title {
         @include adaptiv-font(64, 24);
         font-family: 'Bebas Neue';
         font-weight: 900;
-        text-align-last: left;
+        text-align: left;
         text-transform: uppercase;
     }
 
@@ -154,3 +156,4 @@
         }
     }
 }
+

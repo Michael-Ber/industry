@@ -86,6 +86,34 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/assets/js/burger.js":
+/*!*********************************!*\
+  !*** ./src/assets/js/burger.js ***!
+  \*********************************/
+/*! exports provided: burgerInteraction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "burgerInteraction", function() { return burgerInteraction; });
+const burgerInteraction = () => {
+  try {
+    const burgerBtn = document.querySelector('.header-burger__btn');
+    const menu = document.querySelector('.header-burger__menu');
+    const close = document.querySelector('.header-burger__close');
+    burgerBtn.addEventListener('click', () => {
+      menu.classList.toggle('header-burger__menu_active');
+    });
+    close.addEventListener('click', () => {
+      menu.classList.remove('header-burger__menu_active');
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/main.js":
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
@@ -97,11 +125,14 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _setMarkPositionOnMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setMarkPositionOnMap */ "./src/assets/js/setMarkPositionOnMap.js");
 /* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ "./src/assets/js/modal.js");
+/* harmony import */ var _burger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./burger */ "./src/assets/js/burger.js");
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
   Object(_setMarkPositionOnMap__WEBPACK_IMPORTED_MODULE_0__["setMarkPos"])();
   Object(_modal__WEBPACK_IMPORTED_MODULE_1__["openCloseModal"])();
+  Object(_burger__WEBPACK_IMPORTED_MODULE_2__["burgerInteraction"])();
 });
 
 /***/ }),
@@ -179,11 +210,9 @@ const setMarkPos = () => {
     const markOnSchema = document.querySelector('.schema__mark');
     const pathElement = document.querySelectorAll('.schema .schema__img svg path')[27];
     const dialogBox = document.querySelector('.schema__dialog');
+    mark.style.left = 793 - (1440 - park.clientWidth) / 2 + 'px';
     window.addEventListener('resize', e => {
-      mark.style.left = 937 - (1440 - park.clientWidth) / 2 + 'px';
-      if (window.matchMedia("(max-width: 575px)").matches) {
-        mark.style.display = 'none';
-      }
+      mark.style.left = 793 - (1440 - park.clientWidth) / 2 + 'px';
     });
     pathElement.addEventListener('mouseenter', () => {
       markOnSchema.classList.add('schema__mark_active');

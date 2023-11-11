@@ -3,7 +3,7 @@
 
 .header {
     padding: 10px 10px 25px 10px;
-
+    position: relative;
     &__container {
         display: flex;
         flex-direction: column;
@@ -51,10 +51,13 @@
     }
 
     &__subwrapper {
+        width: 100%;
         margin-top: 25px;
 
+        
         @media(max-width: $breakpoint-575) {
             margin-top: 0;
+            width: unset;
         }
     }
 
@@ -69,17 +72,19 @@
         justify-content: space-between;
         align-items: center;
     }
-
-    &__burger {
-        margin: 0 auto;
-    }
 }
-.burger-header {
+.header-burger {
+    &__btn-wrapper {
+        display: flex;
+        justify-content: center;
+    }
     &__btn {
         display: none;
         flex-direction: column;
         align-items: center;
         gap: 5px;
+        width: 25px;
+        cursor: pointer;
 
         @media(max-width: $breakpoint-991) {
             display: flex;
@@ -88,12 +93,48 @@
         span {
             width: 25px;
             height: 2px;
+            background-color: $gray;
+        }
+    }
+
+    &__menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        z-index: 110;
+        padding: 50px 10px 50px 50px;
+        &_active {
+            display: block;
             background-color: $black;
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 35px;
+        right: 35px;
+        font-size: 24px;
+        color: $white;
+        cursor: pointer;
+        @media(max-width:$breakpoint-767) {
+            top: 20px;
+            right: 20px;
         }
     }
 
     &__nav {
-        display: none;
+        height: 100%;
+    }
+    &__item {
+        &:nth-child(n):not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+
+    &__navlink {
+        color: $white;
     }
 
     &__phone,
@@ -103,6 +144,9 @@
         @media(max-width: $breakpoint-575) {
             display: flex;
             gap: 8px;
+            .burger-link-mail, .burger-link-phone {
+                color: $white;
+            }
         }
     }
 }

@@ -133,6 +133,9 @@ a {
         &_white {
             background-color: $white;
         }
+        @media(max-width: $breakpoint-575) {
+            left: -9px;
+        }
     }
 }
 //END BUTTON

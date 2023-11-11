@@ -1,7 +1,9 @@
 .footer {
     margin-top: 210px;
     background-color: $black-light;
-
+    @media(max-width: $breakpoint-991) {
+        margin-top: 120px;
+    }
     &__wrapper {
         padding: 100px 0;
         @media(max-width: $breakpoint-767) {

@@ -2,24 +2,33 @@
     position: relative;
     margin-top: 200px;
 
-    @media(max-width: $breakpoint-575) {
+    @media(max-width: $breakpoint-991) {
         margin-top: 110px;
     }
 
+    &__wrapper {
+        position: relative;
+    }
+
     &__bg {
-        top: 50%;
+        height: 80% !important;
+        top: 150px;
         left: 0;
 
+        
         @media(max-width: $breakpoint-767) {
-            height: calc(100% - 250px) !important;
-            transform: translate(0, -50%) !important;
-            top: calc(50% + 150px) !important;
             clip-path: unset !important;
+            height: calc(100% + 20px) !important;
+            top: -10px;
         }
     }
 
     &__wrapper {
         padding: 0 10px;
+        margin-top: 70px;
+        @media(max-width: $breakpoint-575) {
+            margin-top: 40px;
+        }
     }
 
     &__logo {
@@ -42,6 +51,9 @@
     &__subtitle {
         margin-top: 37px;
         text-align: center;
+        @media(max-width: $breakpoint-575) {
+            margin-top: 20px;
+        }
     }
 
     &__grid {
@@ -49,7 +61,7 @@
         grid-template-columns: repeat(2, minmax(300px, 522px));
         gap: 20px;
         justify-content: center;
-        margin-top: 70px;
+        
 
 
         @media(max-width: $breakpoint-767) {
@@ -64,8 +76,12 @@
     &__card {
         position: relative;
         box-shadow: 16px 16px 48px 0 rgba(#000, .1);
-        padding: 50px 20px 50px 80px;
-
+        padding: 0px 20px 0px 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 138px;
+        background-color: $white;
         &:nth-child(1) {
             order: 1;
         }

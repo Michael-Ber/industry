@@ -5,12 +5,9 @@ export const setMarkPos = () => {
         const markOnSchema = document.querySelector('.schema__mark');
         const pathElement = document.querySelectorAll('.schema .schema__img svg path')[27];
         const dialogBox = document.querySelector('.schema__dialog');
-
+        mark.style.left = 793 - (1440 - park.clientWidth) / 2 + 'px';
         window.addEventListener('resize', (e) => {
-            mark.style.left = 937 - (1440 - park.clientWidth) / 2 + 'px';
-            if (window.matchMedia("(max-width: 575px)").matches) {
-                mark.style.display = 'none';
-            }
+            mark.style.left = 793 - (1440 - park.clientWidth) / 2 + 'px';
         })
         pathElement.addEventListener('mouseenter', () => {
             markOnSchema.classList.add('schema__mark_active');
