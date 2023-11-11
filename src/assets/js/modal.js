@@ -16,6 +16,9 @@ export const openCloseModal = () => {
         window.addEventListener('resize', () => {
             closeModal();
         })
+        window.addEventListener('scroll', () => {
+            closeModal();
+        })
 
         function closeModal() {
             modal.classList.remove('modal_active');
