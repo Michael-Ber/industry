@@ -76,7 +76,7 @@
     &__card {
         position: relative;
         box-shadow: 16px 16px 48px 0 rgba(#000, .1);
-        padding: 0px 20px 0px 80px;
+        padding: 0px 30px 0px 75px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -169,5 +169,9 @@
     &__text {
         @include adaptiv-font(16, 12);
         font-weight: 500;
+        margin-left: 33px;
+        @media(max-width: $breakpoint-575) {
+            margin-left: 10px;
+        }
     }
 }
