@@ -743,7 +743,7 @@
   box-shadow: 16px 16px 48px 0 rgba(0, 0, 0, 0.1);
   padding: 0px 20px 0px 80px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 138px;
   background-color: #ffffff;
