@@ -141,7 +141,6 @@
         &__text {
             font-size: 15px;
             font-weight: 500;
-            color: $black;
             width: min(80%, 550px);
 
             @media(max-width: $breakpoint-1199) {

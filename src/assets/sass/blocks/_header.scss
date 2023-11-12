@@ -91,7 +91,7 @@
         span {
             width: 25px;
             height: 2px;
-            background-color: $gray;
+            background-color: $text-main;
         }
     }
 
@@ -106,7 +106,7 @@
         padding: 50px 10px 50px 50px;
         &_active {
             display: block;
-            background-color: $black;
+            background-color: $white;
         }
     }
     &__close {
@@ -114,7 +114,7 @@
         top: 35px;
         right: 35px;
         font-size: 24px;
-        color: $white;
+        color: $text-main;
         cursor: pointer;
         @media(max-width:$breakpoint-767) {
             top: 20px;
@@ -132,7 +132,7 @@
     }
 
     &__navlink {
-        color: $white;
+        color: $text-main;
     }
 
     &__phone,
@@ -143,7 +143,7 @@
             display: flex;
             gap: 8px;
             .burger-link-mail, .burger-link-phone {
-                color: $white;
+                color: $text-main;
             }
         }
     }

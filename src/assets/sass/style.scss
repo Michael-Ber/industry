@@ -29,7 +29,7 @@ body {
 
 body {
     font-family: 'Montserrat';
-    color: $gray;
+    color: $text-main;
 }
 
 ul {
@@ -38,7 +38,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: $black;
+    color: $text-main;
 }
 
 //END COMMON
@@ -83,11 +83,7 @@ a {
             color: $white;
 
             &:hover {
-                background-color: darken($main-color, 10%);
-
-                &+.btn-wrapper__background {
-                    background-color: darken($white, 10%);
-                }
+                background-color: lighten($main-color, 10%);
             }
         }
 
@@ -97,10 +93,9 @@ a {
             color: $main-color;
 
             &:hover {
-                background-color: darken($white, 10%);
-
+                color: lighten($main-color, 10%);
                 &+.btn-wrapper__background {
-                    background-color: darken($main-color, 10%);
+                    background-color: lighten($main-color, 10%);
                 }
             }
         }

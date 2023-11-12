@@ -117,21 +117,21 @@
 }
 
 .header-burger__btn-wrapper {
-  display: flex;
+  display: none;
   justify-content: center;
 }
+@media (max-width: 991.99px) {
+  .header-burger__btn-wrapper {
+    display: flex;
+  }
+}
 .header-burger__btn {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
   width: 25px;
   cursor: pointer;
-}
-@media (max-width: 991.99px) {
-  .header-burger__btn {
-    display: flex;
-  }
 }
 .header-burger__btn span {
   width: 25px;
@@ -150,14 +150,14 @@
 }
 .header-burger__menu_active {
   display: block;
-  background-color: #000000;
+  background-color: #ffffff;
 }
 .header-burger__close {
   position: absolute;
   top: 35px;
   right: 35px;
   font-size: 24px;
-  color: #ffffff;
+  color: #404040;
   cursor: pointer;
 }
 @media (max-width: 767.99px) {
@@ -173,7 +173,7 @@
   margin-top: 20px;
 }
 .header-burger__navlink {
-  color: #ffffff;
+  color: #404040;
 }
 .header-burger__phone, .header-burger__mail {
   display: none;
@@ -184,7 +184,7 @@
     gap: 8px;
   }
   .header-burger__phone .burger-link-mail, .header-burger__phone .burger-link-phone, .header-burger__mail .burger-link-mail, .header-burger__mail .burger-link-phone {
-    color: #ffffff;
+    color: #404040;
   }
 }
 
@@ -398,7 +398,6 @@
 .park .billet-park__text {
   font-size: 15px;
   font-weight: 500;
-  color: #000000;
   width: min(80%, 550px);
 }
 @media (max-width: 1199.99px) {
@@ -507,7 +506,6 @@
   list-style-type: disc;
   padding-left: 25px;
   font-weight: 400;
-  color: #404040;
 }
 @media (max-width: 767px) {
   .card-advantages__list {
@@ -524,7 +522,6 @@
   margin-top: 20px;
   font-size: 12px;
   font-weight: 400;
-  color: #404040;
 }
 
 .advantages-btn-wrapper {
@@ -817,7 +814,7 @@
   }
 }
 .services__btn:hover {
-  background-color: #017d88;
+  background-color: #01d9ee;
 }
 
 .card-services__number {
@@ -949,6 +946,8 @@
   width: calc(100% - 60px);
   height: 2px;
   background-color: #01abbb;
+  border-bottom-right-radius: 1px;
+  border-top-right-radius: 1px;
 }
 @media (max-width: 767.99px) {
   .item-timeline-conditions__line {
@@ -957,6 +956,9 @@
     height: 100%;
     width: 2px;
     bottom: 30px;
+    border-bottom-right-radius: 1px;
+    border-bottom-left-radius: 1px;
+    border-top-right-radius: 0;
   }
 }
 .item-timeline-conditions__title {
@@ -989,30 +991,36 @@
 .item-timeline-conditions #line-1::after, .item-timeline-conditions #line-1::before, .item-timeline-conditions #line-2::after, .item-timeline-conditions #line-2::before, .item-timeline-conditions #line-3::after, .item-timeline-conditions #line-3::before, .item-timeline-conditions #line-4::after, .item-timeline-conditions #line-4::before, .item-timeline-conditions #line-5::after, .item-timeline-conditions #line-5::before {
   content: "";
   position: absolute;
-  right: 0;
+  right: -1px;
   display: none;
-  width: 10px;
+  width: 7px;
   height: 2px;
   background-color: #01abbb;
 }
 .item-timeline-conditions #line-1::after, .item-timeline-conditions #line-2::after, .item-timeline-conditions #line-3::after, .item-timeline-conditions #line-4::after, .item-timeline-conditions #line-5::after {
   transform: rotate(45deg);
-  top: -4px;
+  top: -2px;
+  border-top-right-radius: 1px;
 }
 @media (max-width: 767.99px) {
   .item-timeline-conditions #line-1::after, .item-timeline-conditions #line-2::after, .item-timeline-conditions #line-3::after, .item-timeline-conditions #line-4::after, .item-timeline-conditions #line-5::after {
-    top: 93%;
-    left: -7px;
+    top: 94%;
+    left: -5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 1px;
   }
 }
 .item-timeline-conditions #line-1::before, .item-timeline-conditions #line-2::before, .item-timeline-conditions #line-3::before, .item-timeline-conditions #line-4::before, .item-timeline-conditions #line-5::before {
   transform: rotate(-45deg);
-  top: 4px;
+  top: 2px;
+  border-bottom-right-radius: 1px;
 }
 @media (max-width: 767.99px) {
   .item-timeline-conditions #line-1::before, .item-timeline-conditions #line-2::before, .item-timeline-conditions #line-3::before, .item-timeline-conditions #line-4::before, .item-timeline-conditions #line-5::before {
-    top: 93%;
-    left: -1px;
+    top: 94%;
+    left: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 1px;
   }
 }
 .item-timeline-conditions #line-3::after, .item-timeline-conditions #line-3::before, .item-timeline-conditions #line-5::after, .item-timeline-conditions #line-5::before {
@@ -1079,7 +1087,7 @@
 .item-timeline-conditions-include__bottom {
   position: relative;
   margin-top: -7%;
-  margin-left: 15px;
+  margin-left: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1088,15 +1096,12 @@
 @media (max-width: 991.99px) {
   .item-timeline-conditions-include__bottom {
     gap: 10px;
-    margin-left: 10px;
   }
 }
 .item-timeline-conditions-include__link {
   font-size: 12px;
   font-weight: 500;
   text-align: center;
-}
-.item-timeline-conditions-include__link:hover {
   text-decoration: underline;
 }
 .item-timeline-conditions-include__room {
@@ -1317,7 +1322,6 @@
   right: -5%;
   background-color: #ffffff;
   font-weight: 400;
-  color: #000000;
   box-shadow: 16px 16px 48px 0 rgba(0, 0, 0, 0.1);
   opacity: 0;
   transition: 0.3s opacity ease;
@@ -1537,6 +1541,11 @@
     margin-top: 40px;
   }
 }
+@media (max-width: 575.99px) {
+  .footer__links {
+    display: none;
+  }
+}
 .footer__list {
   display: flex;
   justify-content: space-between;
@@ -1545,11 +1554,16 @@
   .footer__list {
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    gap: 5px;
+    gap: 10px;
   }
 }
 .footer__item {
   justify-self: center;
+}
+@media (max-width: 991.99px) {
+  .footer__item {
+    align-items: flex-start !important;
+  }
 }
 .footer__navlink {
   font-weight: 700;
@@ -1764,7 +1778,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #000000;
+  color: #404040;
 }
 
 .btn-wrapper {
@@ -1811,10 +1825,7 @@ a {
   }
 }
 .btn-wrapper__common_green:hover {
-  background-color: #017d88;
-}
-.btn-wrapper__common_green:hover + .btn-wrapper__background {
-  background-color: #e6e6e6;
+  background-color: #01d9ee;
 }
 .btn-wrapper__common_white {
   background-color: #ffffff;
@@ -1831,10 +1842,10 @@ a {
   }
 }
 .btn-wrapper__common_white:hover {
-  background-color: #e6e6e6;
+  color: #01d9ee;
 }
 .btn-wrapper__common_white:hover + .btn-wrapper__background {
-  background-color: #017d88;
+  background-color: #01d9ee;
 }
 .btn-wrapper__background {
   position: absolute;
