@@ -86,12 +86,17 @@
     &__title {
         @include adaptiv-font(20, 14);
         font-weight: 700;
+        
     }
 
     &__descr {
         @include adaptiv-font(16, 12);
         font-weight: 500;
         padding-right: 10px;
+        margin-top: 12px;
+        @media(max-width: $breakpoint-991) {
+            margin-top: 5px;
+        }
     }
 
     #line-1, #line-2, #line-3, #line-4, #line-5 {

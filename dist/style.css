@@ -977,6 +977,7 @@
 .item-timeline-conditions__descr {
   font-weight: 500;
   padding-right: 10px;
+  margin-top: 12px;
 }
 @media (max-width: 767px) {
   .item-timeline-conditions__descr {
@@ -986,6 +987,11 @@
 @media (min-width: 767px) {
   .item-timeline-conditions__descr {
     font-size: calc(12px + 4 * 100vw / 1880);
+  }
+}
+@media (max-width: 991.99px) {
+  .item-timeline-conditions__descr {
+    margin-top: 5px;
   }
 }
 .item-timeline-conditions #line-1::after, .item-timeline-conditions #line-1::before, .item-timeline-conditions #line-2::after, .item-timeline-conditions #line-2::before, .item-timeline-conditions #line-3::after, .item-timeline-conditions #line-3::before, .item-timeline-conditions #line-4::after, .item-timeline-conditions #line-4::before, .item-timeline-conditions #line-5::after, .item-timeline-conditions #line-5::before {
