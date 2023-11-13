@@ -13,8 +13,9 @@ $breakpoint-991: 991.99px;
 $breakpoint-767: 767.99px;
 $breakpoint-575: 575.99px;
 
-$container: 1280px;
-$grid-container: 1280;
-$grid-column: 88;
-$grid-column-gap: 20;
-$grid-column-num: 12;
+$fontSize: 16;
+
+$maxWidth: 1880;
+$maxWidthRem: calc(1880 / $fontSize);
+$minWidth: 375;
+$minWidthRem: calc(375 / $fontSize);

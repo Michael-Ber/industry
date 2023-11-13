@@ -1,14 +1,14 @@
-@import '../var/variables';
-
 .advantages {
     margin-top: 200px;
 
     @media(max-width: $breakpoint-991) {
         margin-top: 110px;
     }
+
     &__wrapper {
         position: relative;
         margin-top: 105px;
+
         @media(max-width: $breakpoint-575) {
             margin-top: 50px;
         }
@@ -21,20 +21,23 @@
         @media(max-width: $breakpoint-1299) {
             height: 93% !important;
         }
+
         @media(max-width: $breakpoint-767) {
             clip-path: unset !important;
         }
+
         @media(max-width: $breakpoint-575) {
             height: 95% !important;
         }
     }
+
     &__grid {
         position: relative;
         display: grid;
         grid-template-columns: repeat(4, minmax(200px, 305px));
         justify-content: center;
         gap: 20px;
-        
+
 
         @media(max-width: $breakpoint-1299) {
             grid-template-columns: repeat(3, minmax(200px, 305px));

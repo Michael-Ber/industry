@@ -1,11 +1,14 @@
 .footer {
     margin-top: 210px;
     background-color: $black-light;
+
     @media(max-width: $breakpoint-991) {
         margin-top: 120px;
     }
+
     &__wrapper {
         padding: 100px 0;
+
         @media(max-width: $breakpoint-767) {
             padding: 50px 10px;
         }
@@ -16,6 +19,7 @@
         grid-template-columns: repeat(2, minmax(50%, auto));
         align-items: flex-start;
         gap: 20px;
+
         @media(max-width: $breakpoint-767) {
             display: grid;
             grid-template-columns: repeat(1, 100%);
@@ -25,11 +29,13 @@
 
     &__logo {
         @include adaptiv-width(340, 200);
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         @media(max-width: $breakpoint-767) {
             justify-self: center;
         }
@@ -39,6 +45,7 @@
         @include adaptiv-font(16, 11);
         font-weight: 400;
         color: $white;
+
         @media(max-width: $breakpoint-767) {
             justify-self: center;
             text-align: center;
@@ -59,9 +66,11 @@
 
     &__links {
         margin-top: 75px;
+
         @media(max-width: $breakpoint-767) {
             margin-top: 40px;
         }
+
         @media(max-width: $breakpoint-575) {
             display: none;
         }
@@ -70,6 +79,7 @@
     &__list {
         display: flex;
         justify-content: space-between;
+
         @media(max-width: $breakpoint-991) {
             display: grid;
             grid-template-columns: repeat(2, calc(100%/2));
@@ -79,6 +89,7 @@
 
     &__item {
         justify-self: center;
+
         @media(max-width: $breakpoint-991) {
             align-items: flex-start !important;
         }
@@ -90,13 +101,16 @@
         color: $white;
     }
 }
+
 .footer-btn-wrapper {
     justify-content: flex-start !important;
     margin: 45px 0 0 10px;
+
     @media(max-width: $breakpoint-767) {
         justify-content: center !important;
     }
 }
+
 .address-footer {
     &__top {
         margin-top: 0;

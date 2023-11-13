@@ -1,11 +1,8 @@
-@import '../var/mixins';
-@import '../var/variables';
-
 .intro {
     position: relative;
 
     &__title {
-        @include adaptiv-font(64, 17);
+        @include adaptiv-font-rem(4, 1);
         position: absolute;
         top: 45px;
         left: 50%;

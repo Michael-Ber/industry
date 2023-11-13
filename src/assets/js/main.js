@@ -6,4 +6,5 @@ window.addEventListener('DOMContentLoaded', () => {
     setMarkPos();
     openCloseModal();
     burgerInteraction();
+
 })
